@@ -1,6 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Header from "./header";
 
 
 export default function Home() {
@@ -11,37 +9,11 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>{title}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossOrigin="anonymous" />
-      </Head>
-
-      <style jsx>{`
-        h1 {
-          textAlign: 'right',
-          padding: '5px 15px'
-        }
-
-        p {
-          textAlign: 'left',
-          margin: '0px 5px',
-          color: '#669',
-          fontSize: '18pt'
-        }
-
-        h2 {
-          textAlign: 'center',
-          margin: '0px 5px',
-          color: '#99d',
-          fontSize: '24pt',
-          fontWeight: 'bold'
-        }
-      `}</style>
-
-      <h1 className="bg-primary text-white display-4">React</h1>
+      <Header title={title} />
+      <h1 className="bg-primary px-3 text-white display-4 text-right">React</h1>
       <div className="container">
-        <h2 className="my-3" id="subtitle">{title}</h2>
-        <div className="alert alert-primary text-center">
+        <h3 className="my-3 text-primary text-center">{title}</h3>
+        <div className="alert alert-primary text-left">
           <p className="h5">{message}</p>
         </div>
       </div>
