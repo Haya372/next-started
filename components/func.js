@@ -12,8 +12,8 @@ export default {
       "caption": '10, 20, 30, ...というようにカンマで区切った数字の合計を計算します。',
       "function": `(...param) => {
         let res = 0;
-        for(i in param){
-          res += i * 1;
+        for(var i of param[0]){
+          res += parseInt(i) * 1;
         }
         return res;
       }`
@@ -22,6 +22,7 @@ export default {
       "caption": 'ゼロから入力値までの合計を計算します。',
       "function": `(...param) => {
         let res = 0;
+        if(typeof param[0] === 'object') param[0] = param[0][0]
         for(var i = 1; i <= param[0]; i++){
           res += i;
         }
